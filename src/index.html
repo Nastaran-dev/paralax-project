@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <link rel="stylesheet" href="css/output.css" />
+    <style>
+      .back {
+        background-image: linear-gradient(
+          270deg,
+          #d5bdf8,
+          #b8c1f5,
+          #94bdf7,
+          #b8c1f5,
+          #d5bdf8
+        );
+      }
+
+      .bz {
+        transform: none !important;
+        transform-style: flat !important;
+      }
+
+      #apple-images {
+        transition: transform 0.3s linear;
+      }
+
+      .apple-img {
+        transition: transform 0.3s ease;
+      }
+      #container {
+        perspective: 1800px;
+      }
+
+      #left p,
+      #right p {
+        transform-style: preserve-3d;
+        opacity: 0.25;
+        transition: transform 0.35s ease-out, opacity 0.35s ease-out;
+      }
+      .typing-cursor {
+        display: inline-block;
+        width: 8px;
+        height: 1em;
+        background: white;
+        margin-left: 5px;
+        animation: blink 0.7s infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .step-dot.active {
+        background: #4fc3f7;
+        transform: scale(1.4);
+        transition: 0.3s;
+      }
+      #parallax-footer {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+      }
+
+      #parallax-footer .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 35%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        transform: translateZ(0);
+        transition: transform 0.2s ease-out;
+      }
+
+      #parallax-footer .footer-content {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 30%;
+        height: 100%;
+        gap: 30px;
+      }
+
+      #parallax-footer a {
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden">
+    <div
+      class="w-full h-[200vh] mx-auto mt-0 2xl:container bg-gradient-to-r from-[#7f7fd5] via-[#86a8e7] to-[#91eae4] fixed top-0 left-0 z-10"
+    >
+      <div class="relative z-10 flex justify-between w-full gap-5 p-3">
+        <figure class="w-10">
+          <img src="img/imgi_6_mobile_logo.svg" alt="" class="w-full" />
+        </figure>
+
+        <div
+          class="text-[50px] mt-5 md:mt-0 font-extrabold text-center space-x-3 uppercase md:text-[220px] md:w-[80%] mx-auto animate-textColor duration-1000"
+          id="text-anime"
+        >
+          frontend woman
+        </div>
+        <div>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="text-white size-9"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <figure
+        id="woman-image"
+        class="w-[410px] absolute top-[3%] left-[38%] z-10"
+        style="transition: transform 0.1s linear"
+      >
+        <img src="img/imgi_2_woman2.webp" alt="" class="w-full" />
+      </figure>
+    </div>
+
+    <div
+      class="z-20 mt-[100vh] bg-[#0c0c0c] h-[280vh] overflow-x-hidden overflow-y-hidden relative"
+      style="
+        background: linear-gradient(
+          239deg,
+          rgba(5, 5, 5, 1) 0%,
+          rgba(186, 194, 186, 1) 100%
+        );
+      "
+      id="sec1"
+    >
+      <div>
+        <p
+          class="text-[200px] uppercase space-x-24 text-center absolute top-[-3%] p-3 text-[#b3c1d7]"
+        >
+          simp&nbsp;y about
+        </p>
+      </div>
+      <div
+        class="flex flex-wrap w-full absolute p-3 *:rounded-md top-[10%] *:w-[49%] gap-3 justify-center duration-1000"
+      >
+        <div class="*:p-12 *:uppercase back duration-1000 box">
+          <div class="text-[80px] bz w-fit px-4">awarrds12+</div>
+
+          <div class="mt-2 bz">
+            <div class="text-[30px] font-bold bz">won with partness</div>
+
+            <div class="mt-2 bz">
+              <a class="inline-block p-3 border border-black rounded-2xl bz"
+                >arty devs.com</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="*:p-12 *:uppercase back duration-1000 box">
+          <div class="text-[100px] bz w-fit px-4">98%</div>
+
+          <div class="mt-2 bz">
+            <div class="text-[30px] font-bold bz">project at artyd devs</div>
+
+            <div class="mt-2 bz">
+              <a class="inline-block p-3 border border-black rounded-2xl bz"
+                >arty devs.com</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="*:p-12 *:uppercase back duration-1000 box">
+          <div class="text-[90px] bz w-fit px-4">i am human</div>
+
+          <div class="mt-2 bz">
+            <div class="text-[30px] font-bold bz">upwork just sucsess</div>
+
+            <div class="mt-2 bz">
+              <a class="inline-block p-3 border border-black rounded-2xl bz"
+                >arty devs.com</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="*:p-12 *:uppercase back duration-1000 box">
+          <div class="text-[100px] bz w-fit px-4">lead</div>
+
+          <div class="mt-2 bz">
+            <div class="text-[30px] font-bold bz">humar & designers</div>
+
+            <div class="mt-2 bz">
+              <a class="inline-block p-3 border border-black rounded-2xl bz"
+                >arty devs.com</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="absolute top-[160vh] w-full text-center text-black z-[999] duration-1000"
+        id="skills-title"
+      >
+        <h2 class="text-[150px] uppercase tracking-widest font-extrabold">
+          skills
+        </h2>
+      </div>
+
+      <div
+        id="skills-bg"
+        class="absolute top-[160vh] w-full h-[120vh] opacity-30"
+      ></div>
+      <div
+        id="skills-cards"
+        class="absolute top-[180vh] w-full flex flex-wrap justify-center gap-10 p-5 z-20"
+      >
+        <div
+          class="back p-10 rounded-2xl shadow-lg w-[350px] parallax-card text-gray-800"
+          style="
+            background: linear-gradient(
+              239deg,
+              rgba(5, 5, 5, 1) 0%,
+              rgba(186, 194, 186, 1) 100%
+            );
+          "
+        >
+          <h3 class="text-[60px] font-extrabold uppercase">ui/ux</h3>
+          <p class="mt-4 text-[20px]">
+            Minimal motion & creative design systems.
+          </p>
+        </div>
+
+        <div
+          class="back p-10 rounded-2xl shadow-lg w-[350px] parallax-card text-gray-800"
+          style="
+            background: linear-gradient(
+              239deg,
+              rgba(5, 5, 5, 1) 0%,
+              rgba(186, 194, 186, 1) 100%
+            );
+          "
+        >
+          <h3 class="text-[60px] font-extrabold uppercase">react</h3>
+          <p class="mt-4 text-[20px]">Dynamic UI with smooth transitions.</p>
+        </div>
+
+        <div
+          class="back p-10 rounded-2xl shadow-lg w-[350px] parallax-card text-gray-800"
+          style="
+            background: linear-gradient(
+              239deg,
+              rgba(5, 5, 5, 1) 0%,
+              rgba(186, 194, 186, 1) 100%
+            );
+          "
+        >
+          <h3 class="text-[60px] font-extrabold uppercase">motion</h3>
+          <p class="mt-4 text-[20px]">GSAP • ScrollMagic • Parallax systems.</p>
+        </div>
+      </div>
+    </div>
+    <section
+      id="apple-horizontal"
+      class="relative w-full h-[300vh] bg-white z-40"
+    >
+      <div id="pin-wrapper" class="sticky top-0 h-[100vh] overflow-hidden">
+        <div id="apple-images" class="flex items-center h-full">
+          <img
+            src="img/beautiful-blonde-woman-blue-light (1).jpg"
+            class="w-full apple-img"
+          />
+
+          <img
+            src="img/teenager-light-movie-projector (1).jpg"
+            class="w-full apple-img"
+          />
+
+          <img
+            src="img/woman-portrait-with-blue-lights-visual-effects (1).jpg"
+            class="w-full apple-img"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- ///////////////////////////// -->
+
+    <div
+      class="relative flex flex-wrap w-full mx-auto 2xl:container h-[150vh] bg-black gap-6 z-[1000]"
+      id="container"
+    >
+      <div class="relative flex w-[43%] m-10 bg-[#94bdf7] rounded-lg h-[90%]">
+        <div
+          class="w-full flex flex-col gap-[70px] mt-4 *:text-[20px] px-[40%] py-12 *:text-center *:border-b *:border-gray-400 *:capitalize *:w-[150%]"
+          id="left"
+        >
+          <p>bugless</p>
+          <p>pixeloerfect</p>
+          <p>on-time dedlines</p>
+          <p>fixed price only</p>
+          <p>free light</p>
+          <p>betther than figma</p>
+          <p>weekly updates</p>
+          <p>stable support</p>
+          <p>fast replies</p>
+        </div>
+      </div>
+      <div
+        class="z-40 p-8 bg-black rounded-full w-[200px] h-[200px] mt-[20%] text-[80px] text-center left-[43%] top-[-22%] absolute flex items-center justify-center text-[#94bdf7] duration-700"
+        id="circle"
+      >
+        20
+      </div>
+      <div
+        class="relative flex w-[43%] gap-4 m-10 bg-[#d2bdf8] rounded-lg h-[90%]"
+      >
+        <div
+          class="w-full *:text-[20px] flex flex-col gap-[70px] px-[40%] py-12 *:border-b *:border-gray-400 *:text-center *:capitalize *:w-[150%]"
+          id="right"
+        >
+          <p>full of bugs</p>
+          <p>near layout</p>
+          <p>deadlinee shame</p>
+          <p>post-lounch costs</p>
+          <p>hovers not always</p>
+          <p>worse than figma</p>
+          <p>starge silence</p>
+          <p>dev rotation</p>
+          <p>hours of silence</p>
+        </div>
+      </div>
+    </div>
+    <section
+      id="scroll-typing-section"
+      class="w-full h-[200vh] bg-black text-white relative z-40"
+    >
+      <div
+        id="typing-pin"
+        class="sticky top-0 flex flex-col items-center justify-center h-screen"
+      >
+        <div
+          id="typing-box"
+          class="text-center max-w-3xl p-10 border-2 border-white rounded-3xl text-[40px] leading-[1.5] min-h-[200px]"
+        ></div>
+        <div class="flex gap-4 mt-10 *:text-[#94bdf7]">
+          <div class="w-6 h-6 bg-gray-600 rounded-full step-dot"></div>
+          <div class="w-6 h-6 bg-gray-600 rounded-full step-dot"></div>
+          <div class="w-6 h-6 bg-gray-600 rounded-full step-dot"></div>
+          <div class="w-6 h-6 bg-gray-600 rounded-full step-dot"></div>
+        </div>
+        <div
+          class="text-gray-400 w-full text-[100px] uppercase flex justify-center mt-[7%] items-center gap-2"
+        >
+          send of
+          <span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="text-gray-600 size-32"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    ///////////////////////////////////
+    <footer
+      id="parallax-footer"
+      class="relative w-full h-[100vh] text-white z-50 mt-[-20vh] bg-black bg-fixed"
+    >
+      <img
+        src="img/photo_2025-12-09_20-23-57-removebg-preview (1).png"
+        alt=""
+        class="fixed items-center object-cover w-[30%] h-full img"
+      />
+      <div class="flex flex-col justify-center py-[10%] ml-[33%] gap-4">
+        <a
+          href="https://github.com/nastaran-dev"
+          target="_blank"
+          class="w-14 h-14 rounded-full bg-pink-200/20 backdrop-blur-md flex items-center justify-center text-white text-xl shadow-[0_0_20px_rgba(255,170,230,0.4),inset_0_0_12px_rgba(255,255,255,0.25)] hover:scale-110 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(255,240,255,1),0_0_60px_rgba(255,100,200,0.9),inset_0_0_22px_rgba(255,255,255,0.5)] transition-all duration-300"
+        >
+          <img src="img/github-fill.svg" alt="" class="w-9" />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/nastaran-mohammadi-1515a8382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank"
+          class="w-14 h-14 rounded-full bg-pink-200/20 backdrop-blur-md flex items-center justify-center text-pink-100 text-xl shadow-[0_0_20px_rgba(255,170,230,0.4),inset_0_0_12px_rgba(255,255,255,0.25)] hover:scale-110 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(255,240,255,1),0_0_60px_rgba(255,100,200,0.9),inset_0_0_22px_rgba(255,255,255,0.5)] transition-all duration-300"
+        >
+          <img
+            src="img/linkedin-box-fill.svg"
+            alt=""
+            class="rounded-full w-9"
+          />
+        </a>
+
+        <a
+          href="https://instagram.com/nastaran__dev"
+          target="_blank"
+          class="w-14 h-14 rounded-full bg-pink-200/20 backdrop-blur-md flex items-center justify-center text-pink-300 text-xl shadow-[0_0_20px_rgba(255,170,230,0.4),inset_0_0_12px_rgba(255,255,255,0.25)] hover:scale-110 hover:-translate-y-2 hover:shadow-[0_0_35px_rgba(255,240,255,1),0_0_60px_rgba(255,100,200,0.9),inset_0_0_22px_rgba(255,255,255,0.5)] transition-all duration-300"
+        >
+          <img src="img/instagram-fill.svg" alt="" class="w-10 rounded-full" />
+        </a>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>
